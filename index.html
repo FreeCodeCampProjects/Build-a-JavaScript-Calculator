@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculator</title>
+
+    <!-- Meta Data -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="John Martin">
+    <meta name="description" content="A basic calculator app — part of a FreeCodeCamp track.">
+    <meta name="keywords" content="calculator, basic, app, freecodecamp">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300" type="text/css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" type="text/css">
+    <link rel="stylesheet" href="https://dl.dropboxusercontent.com/u/7797721/FreeCodeCamp/Calculator/animate.css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+    
+    <!-- Container -->
+    <div ng-app="calculator" class="container col-md-12 col-sm-12 col-xs-12">
+    <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 
+                    col-sm-6 col-sm-offset-3 col-xs-12 col-xs-offset-0">
+        <!-- Calculator elements go here -->
+        <div class="calculator-body">
+            <div ng-controller="CalcCtrl" class="calculator-container">
+            <form name="calculator">
+                <div class="logo">calculatorJS</div>
+                <div class="bezel-inner">
+                    <input value="" class="screen" name="answer">
+                </div>
+                <div class="btn-container">
+                    <button ng-if="$index >= 16" ng-repeat="btn in buttons" class="btn-clear" ng-click="buttonEvt(btn)">
+                    {{ btn }}
+                    </button>
+                    <button ng-if="$index < 16" ng-repeat="btn in buttons" class="btn" ng-click="buttonEvt(btn)">
+                    {{ btn }}
+                    </button>
+                </div>
+            </form>
+            </div>
+            <hr>
+
+            <!-- Footer -->
+            <footer class="footer">
+            made by John for
+            <a href="http://www.freecodecamp.com">
+                freecodecamp
+            </a>
+            </footer>
+            <br/>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Additional JavaScripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.2/angular.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
